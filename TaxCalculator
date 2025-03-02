@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class SalaryTaxCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Greq ashxatavardzy: ");
+        double salary = scanner.nextDouble();
+
+        double tax = 0; 
+
+        if (salary <= 100000) {
+            tax = 0;
+        } else if (salary <= 300000) {
+            tax = (salary - 100000) * 0.10;
+        } else if (salary <= 500000) {
+            tax = (200000 * 0.10) + (salary - 300000) * 0.20;
+        } else {
+            tax = (200000 * 0.10) + (200000 * 0.20) + (salary - 500000) * 0.30;
+        }
+        double netSalary = salary - tax;
+        System.out.println("harki chapy: " + tax + "dram");
+        System.out.println("Maqur ashxatavardzy: " + netSalary + " dram");
+        scanner.close();
+    }
+}
